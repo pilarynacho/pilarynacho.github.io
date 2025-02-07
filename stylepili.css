@@ -139,7 +139,7 @@ section .section-inner {
   text-transform: uppercase;
 }
 
-.wedding-details-text a,
+
 section.regalo button,
 .asistencia a {
   background-color: white;
@@ -154,11 +154,30 @@ section.regalo button,
 
 }
 
-.wedding-details-text a:hover,
+.wedding-details-text a{
+  background-color: var(--main-color);
+  padding: 12px 22px;
+  border-radius: 24px;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  font-size: calc(var(--main-font-size)*1.2);
+  border: 1px solid white;
+  font-weight: bold;
+  border: 1px solid var(--main-color);
+
+}
+
+
 section.regalo button:hover,
 .asistencia a:hover {
   background-color: var(--main-color);
   color:white ;
+}
+
+.wedding-details-text a:hover{
+  background-color: white;
+  color:var(--main-color) ;
 }
 .wedding-details-text a {
   /* text-transform: uppercase; */
