@@ -304,11 +304,11 @@ footer {
     /*min-height: calc((100vw * 16)/9);*/
     background-image: url("img/mobile.jpg") !important;
     background-size: cover !important;
-    background-attachment: initial !important;
     background-position: 50% 0%;
+
   }
   .overlay-header p {
-    font-size: 36px;
+    font-size: 48px;
     text-align: left;
     top: 20px;
     left: 30px;
