@@ -318,8 +318,9 @@ footer {
   }
   .wedding-details-text {
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    gap:5px;
   }
   section .section-inner {
     width: 100%;
