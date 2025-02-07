@@ -281,10 +281,12 @@ footer {
 
 @media (max-width: 768px) {
   header {
+    height: 100vh;
     /*min-height: calc((100vw * 16)/9);*/
     background-image: url("img/mobile.jpg") !important;
-    background-size: 100% 100% !important;
+    background-size: cover !important;
     background-attachment: initial !important;
+    background-position: 50% 0%;
   }
   .overlay-header p {
     font-size: 36px;
@@ -329,5 +331,8 @@ footer {
   .photos img:hover {
     transform: scale(1.01);
     transition: transform ease 0.5s;
+  }
+  section.regalo p{
+    width: 60%;
   }
 }
