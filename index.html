@@ -1,6 +1,173 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="stylepili.css" type="text/css" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <title>Invitacion:: Pili & Nacho</title>
   </head>
-  <body><p>hola mundo!</p></body>
+  <body>
+    <div class="modal-regalos">
+      <div class="inner-modal-regalos">
+        <div class="modal-regalos-item">
+          <h3>Datos Bancarios</h3>
+          <p>Banco Julio SA</p>
+          <p><strong>CBU:</strong> 0720216488000036945672</p>
+          <p><strong>Alias:</strong> JOSE.NICO</p>
+        </div>
+        <div class="modal-regalos-item">
+          <h3>Lista de Regalos</h3>
+          <a
+            target="_blank"
+            href="https://docs.google.com/spreadsheets/d/170VCWhXVKav8vVKB4wBY9EFJayd2mQL85u4UJ2XeoAo/edit?usp=sharing"
+            >- Excel con lo que necesitamos :)</a
+          >
+        </div>
+        <div class="modal-regalos-item">
+          <h3>Billetera de USDT (TRC20)</h3>
+          <p>TTouM6wzkJToPVcstrmy7ZmEpxiSKi3FP5</p>
+          <img src="img/Tether_QR.png" alt="usdt" />
+        </div>
+      </div>
+    </div>
+    <header>
+      <div class="overlay-header">
+        <p>Pili y Nacho<br />29 | 03 | 2025</p>
+      </div>
+      <a href="#about"><img src="img/down-arrow.png" /></a>
+    </header>
+    <div id="about" class="days-left">
+      <p style="font-weight: bold;">Faltan</p>
+      <p id="text-days"></p>
+    </div>
+
+    <section>
+      <div class="section-inner">
+        <div class="wedding-details">
+          <div class="wedding-details-text">
+            <img src="img/church.png" alt="ring" />
+            <div class="">
+              <h2>Iglesia</h2>
+              <p>
+                La ceremonia religiosa se realizará en la Iglesia del Instituto Salesiano Domingo Savio el día <strong>29 de Marzo a las 16hs.</strong>
+              </p>
+              <a target="_blank" href="https://maps.app.goo.gl/2Xb56yT8TjoVKQtH9"
+                >Cómo llegar</a
+              >
+            </div>
+          </div>
+          <div class="wedding-details-text">
+            <img src="img/dance.png" alt="ring" />
+            <div class="">
+              <h2>Fiesta</h2>
+              <p>
+                Despues de la ceremonia los esperamos en Estancia Causana para
+                celebrar con nosotros
+              </p>
+              <a target="_blank" href="https://goo.gl/maps/68W1ABz9UxwKzC1SA"
+                >Cómo llegar</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="photos">
+        <h1 style="width: 100%; margin: 50px 0px; font-size: 32px;">
+12 años juntos        </h1>
+      </div>
+    </section>
+    <section class="asistencia">
+      <div class="section-inner">
+        <h2>Confirmar asistencia</h2>
+        <p>Esperamos que seas parte de esta gran fiesta. Te esperamos!</p>
+        <a
+          target="_blank"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSeGrXUlcFBfyqTQcJgOCk37rrc0-tpwd__DCsUI3z2HgwehgQ/viewform?usp=sf_link"
+          >Confirmar asistencia</a
+        >
+      </div>
+    </section>
+    <section class="regalo">
+      <img src="img/gift.png" alt="gifts:)" />
+      <p>Si queres hacernos un regalo...</p>
+      <button id="toggleModal" type="button" name="button">Ver datos</button>
+    </section>
+
+    <footer>
+      <p>Gracias por acompañarnos en este momento tan importante</p>
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"
+    ></script>
+
+    <script type="text/javascript">
+      // Set the date we're counting down to
+      var countDownDate = new Date("March 29, 2025 16:00:00").getTime();
+
+      // Update the count down every 1 second
+      var x = setInterval(function () {
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the element with id="demo"
+        document.getElementById("text-days").innerHTML =
+          days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+        // If the count down is finished, write some text
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("text-days").innerHTML = "EXPIRED";
+        }
+      }, 1000);
+
+      $(document).ready(function () {
+        $("#toggleModal").click(function () {
+          $(".modal-regalos").css("display", "flex");
+        });
+        $(".modal-regalos").click(function () {
+          $(".modal-regalos").css("display", "");
+        });
+
+        var dir = "JN/";
+        var fileextension = ".JPG";
+        // $.ajax({
+        //   //This will retrieve the contents of the folder if the folder is configured as 'browsable'
+        //   url: dir,
+        //   success: function (data) {
+        //     //List all .png file names in the page
+        //     $(data)
+        //       .find("a:contains(" + fileextension + ")")
+        //       .each(function () {
+        //         var filename = this.href
+        //           .replace(window.location.host, "")
+        //           .replace("https://", "");
+        //         $(".photos").append("<img src='" + dir + filename + "'>");
+        //       });
+        //   },
+        // });
+      });
+
+      for (let i = 1; i <= 10; i++) {
+        $(".photos").append("<img src='JN/" + i + ".JPG' />");
+      }
+    </script>
+  </body>
 </html>
